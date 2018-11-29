@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/scenes/GunGrid/GunGrid.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 359.096, 128.07 )
+
+[node name="GunGrid" type="Control" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+_sections_unfolded = [ "Margin", "Mouse", "Rect" ]
+
+[node name="GridContainer" type="GridContainer" parent="." index="0"]
+
+show_behind_parent = true
+light_mask = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 45.0
+margin_right = 45.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 7
+_sections_unfolded = [ "Mouse", "Size Flags", "Visibility", "custom_constants" ]
+
+[node name="TouchArea" type="Area2D" parent="." index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+monitoring = false
+monitorable = false
+collision_layer = 33825
+collision_mask = 33825
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Pickable", "Z Index" ]
+
+[node name="TouchCollision" type="CollisionShape2D" parent="TouchArea" index="0"]
+
+position = Vector2( 360, 0 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[connection signal="input_event" from="TouchArea" to="." method="_on_TouchArea_input_event"]
+
+
