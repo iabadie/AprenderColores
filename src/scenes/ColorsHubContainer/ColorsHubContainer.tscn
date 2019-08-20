@@ -1,31 +1,24 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/scenes/ColorsHubContainer/ColorsHubContainer.gd" type="Script" id=1]
 [ext_resource path="res://src/scenes/SlotContainer/SlotContainer.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/scenes/Gun/Gun.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/scenes/GunGrid/GunGrid.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/scenes/Grid/Grid.tscn" type="PackedScene" id=3]
 
-[node name="Hub" type="Node2D" index="0"]
-
+[node name="Hub" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="SlotLeft" parent="." index="0" instance=ExtResource( 2 )]
-
+[node name="SlotLeft" parent="." instance=ExtResource( 2 )]
 position = Vector2( 150, 1100 )
-_sections_unfolded = [ "Material", "Transform" ]
 
-[node name="SlotRight" parent="." index="1" instance=ExtResource( 2 )]
+[node name="SlotCenter" parent="." instance=ExtResource( 2 )]
+position = Vector2( 364.134, 1101.78 )
+slotColor = "green"
 
+[node name="SlotRight" parent="." instance=ExtResource( 2 )]
 position = Vector2( 580, 1100 )
-_sections_unfolded = [ "Material", "Transform" ]
+slotColor = "orange"
 
-[node name="Gun" parent="." index="2" instance=ExtResource( 3 )]
-
-position = Vector2( 322.986, 920.777 )
-
-[node name="GunGrid" parent="." index="3" instance=ExtResource( 4 )]
-
+[node name="Grid" parent="." instance=ExtResource( 3 )]
 margin_top = 900.0
 margin_bottom = 900.0
-
 

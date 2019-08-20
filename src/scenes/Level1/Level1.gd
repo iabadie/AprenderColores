@@ -1,13 +1,22 @@
 extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+const finish_dialog = preload("res://src/scenes/UI/FinishDialog/FinishDialog.tscn")
+
+var points = 0;
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+	$Points.text = String(points);
 
 func lose_level():
-	$Control.visible = true;
+	var dialog = finish_dialog.instance()
+	add_child(dialog)
+	dialog.show_dialog(points)
+	$GridGenerator.get_tree().paused = true
+
+func add_points(newPoints = 10):
+	points += newPoints;
+	$Points.text = String(points);
+
+func end_game():
+	lose_level()
+	pass

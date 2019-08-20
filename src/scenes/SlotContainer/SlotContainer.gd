@@ -1,27 +1,22 @@
 extends Node2D
 
-var colors = global.primaryColors;
-var colorsSize = colors.size();
-# selection var to index the colors var
-var selection = global.PRIMARY.red;
+export (String, "purple", "green", "orange") var slotColor = "purple";
+var selection
 var pressed = false;
-signal set_color;
+signal change_color;
 
 func init():
-	set_color();
+	selection = global.colors[slotColor];
+	$Color.set_texture(global.colorsResources[global.colors[slotColor]]);
 
 func set_color():
-	$Color.set_texture(colors[selection])
-	emit_signal("set_color", selection)
+	emit_signal("change_color", selection)
 
 
 func _on_SlotArea_input_event(viewport, event, shape_idx):
-	if Input.is_action_just_pressed("touch") and not pressed:
-		pressed = true
-		selection += 1;
-		if selection == colorsSize:
-			selection = 0;
+	if (event is InputEventScreenTouch and event.is_pressed()) or Input.is_action_just_pressed("touch") and not pressed:
 		set_color();
 	elif Input.is_action_just_released("touch") and pressed:
 		pressed = false
 	pass
+

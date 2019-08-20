@@ -1,8 +1,12 @@
 extends Node2D
 
+var selected = global.colors.purple;
+
 func _ready():
-	$Gun.GunConnect($SlotLeft, $SlotRight, "set_color")
 	$SlotLeft.init();
+	$SlotCenter.init();
 	$SlotRight.init();
-	$GunGrid.init($Gun);
+	$Grid.connect_node($SlotLeft);
+	$Grid.connect_node($SlotCenter);
+	$Grid.connect_node($SlotRight);
 	pass

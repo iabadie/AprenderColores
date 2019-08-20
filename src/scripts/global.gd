@@ -23,3 +23,18 @@ var colorsResources = [red, blue, yellow, purple, green, orange];
 var secondaryColors = [purple, green, orange];
 var primaryColors = [red, blue, yellow];
 
+var navigationStack = [menuScene]
+
+func _ready():
+	get_tree().set_auto_accept_quit(false);
+	
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+		if global.navigationStack.size() > 1:
+			# Go back to last view
+			navigationStack.pop_back()
+			get_tree().change_scene(navigationStack.back());
+		else:
+			get_tree().quit();
+			# quitting app or back-button on Android
+	pass

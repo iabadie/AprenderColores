@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://src/scenes/GunGrid/GunGrid.gd" type="Script" id=1]
+[ext_resource path="res://src/scenes/UI/ColorBar/ColorBar.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 359.096, 128.07 )
+extents = Vector2( 359.096, 90 )
 
-[node name="GunGrid" type="Control" index="0"]
+[node name="ColorBar" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -20,7 +20,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
-_sections_unfolded = [ "Margin", "Mouse", "Rect" ]
+_sections_unfolded = [ "Mouse", "Rect" ]
 
 [node name="GridContainer" type="GridContainer" parent="." index="0"]
 
@@ -39,12 +39,10 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 size_flags_stretch_ratio = 0.0
-custom_constants/vseparation = 0
-custom_constants/hseparation = 0
-columns = 7
-_sections_unfolded = [ "Mouse", "Size Flags", "Visibility", "custom_constants" ]
+columns = 1
+_sections_unfolded = [ "Margin", "Mouse", "Rect", "Size Flags", "Visibility", "custom_constants" ]
 
-[node name="TouchArea" type="Area2D" parent="." index="1"]
+[node name="DetectorArea" type="Area2D" parent="." index="1"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -59,12 +57,10 @@ audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision", "Pickable", "Z Index" ]
 
-[node name="TouchCollision" type="CollisionShape2D" parent="TouchArea" index="0"]
+[node name="DetectorAreaColission" type="CollisionShape2D" parent="DetectorArea" index="0"]
 
 position = Vector2( 360, 0 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
-
-[connection signal="input_event" from="TouchArea" to="." method="_on_TouchArea_input_event"]
 
 

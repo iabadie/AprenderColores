@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/scenes/UI/ColorsUIContainer/ColorsUIContainer.gd" type="Script" id=1]
+[ext_resource path="res://src/scenes/UI/ColorBar/ColorBar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/scenes/UI/ColorUI/ColorUI.tscn" type="PackedScene" id=3]
+
+[node name="ColorsUIContainer" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="ColorBar" parent="." index="0" instance=ExtResource( 2 )]
+
+margin_top = 845.0
+margin_bottom = 845.0
+
+[node name="Blue" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 135.371, 1138.34 )
+
+[node name="Yellow" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 357.163, 1009.06 )
+
+[node name="Red" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 573.327, 1135.43 )
+
+[node name="SelectionPosition" type="Position2D" parent="." index="4"]
+
+position = Vector2( 354.247, 1010.92 )
+
+[node name="CenterTween" type="Tween" parent="." index="5"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="SelectedTween" type="Tween" parent="." index="6"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[connection signal="tween_completed" from="CenterTween" to="." method="_on_CenterTween_tween_completed"]
+
+[connection signal="tween_completed" from="SelectedTween" to="." method="_on_SelectedTween_tween_completed"]
+
+
