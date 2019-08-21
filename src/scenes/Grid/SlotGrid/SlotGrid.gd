@@ -10,7 +10,7 @@ const secondHit = Color(1,1,1, 0.3)
 
 const lastHit = Color(1,1,1, 0.0)
 
-var squareLife = 1
+var squareLife = 3
 
 func _ready():
 	$Center/Color.set_texture(image);

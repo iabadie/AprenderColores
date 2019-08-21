@@ -38,7 +38,7 @@ func generate_colors():
 	var color_two = ColorBall.instance();
 	randomize();
 	# Decide si debe generar bloques corazon o no, con una probabilidad de X
-	var get_heart = rand_range(0, 1) > 0.1
+	var get_heart = rand_range(0, 1) > 0.9
 	if get_heart:
 		color_one.set_heart()
 		color_two.set_heart()

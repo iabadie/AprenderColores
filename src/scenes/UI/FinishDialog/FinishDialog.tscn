@@ -102,3 +102,4 @@ icon = ExtResource( 6 )
 flat = true
 
 [connection signal="pressed" from="Control/CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/Retry" to="." method="_on_Retry_pressed"]

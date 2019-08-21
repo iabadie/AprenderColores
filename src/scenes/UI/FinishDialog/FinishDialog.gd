@@ -11,6 +11,14 @@ func show_dialog(points):
 
 
 func _on_Back_pressed():
+	global._notification(MainLoop.NOTIFICATION_WM_QUIT_REQUEST)
 	queue_free()
-	# TODO sacar la pausa
+	get_tree().paused = false
+	pass # Replace with function body.
+
+
+func _on_Retry_pressed():
+	queue_free()
+	get_tree().paused = false
+	get_tree().reload_current_scene()
 	pass # Replace with function body.
