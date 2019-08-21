@@ -24,6 +24,9 @@ func change_color(color):
 func check_color(arrivedValues):
 	if arrivedValues.expectedColor == colorSelected:
 		get_tree().call_group("level", "add_points");
+		if arrivedValues.is_heart:
+			$GridContainer.get_child(arrivedValues.first_position).increase_life()
+			$GridContainer.get_child(arrivedValues.second_position).increase_life()
 	else:
 		$GridContainer.get_child(arrivedValues.first_position).decrease_life()
 		$GridContainer.get_child(arrivedValues.second_position).decrease_life()

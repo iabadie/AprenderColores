@@ -37,6 +37,11 @@ func generate_colors():
 	var color_one = ColorBall.instance();
 	var color_two = ColorBall.instance();
 	randomize();
+	# Decide si debe generar bloques corazon o no, con una probabilidad de X
+	var get_heart = rand_range(0, 1) > 0.1
+	if get_heart:
+		color_one.set_heart()
+		color_two.set_heart()
 	# setea la posición de los 2 colores instanciados evitando repetición
 	var first_position = int(rand_range(0, columns));
 	color_one.position = Vector2(first_position * xoffset + 45, 0);
@@ -63,7 +68,7 @@ func generate_colors():
 			expectedColor = global.colors.orange
 		3:
 			expectedColor = global.colors.green
-	gridValues = { "expectedColor": expectedColor, "first_position": first_position, "second_position": second_position }
+	gridValues = { "expectedColor": expectedColor, "first_position": first_position, "second_position": second_position, "is_heart": get_heart }
 	pass
 
 # Elimina el ColorGrid de memoria al finalizar la modulación a transparente

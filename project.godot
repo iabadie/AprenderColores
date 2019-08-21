@@ -17,9 +17,9 @@ _global_script_class_icons={
 
 config/name="Aprender Colores"
 run/main_scene="res://src/scenes/Menu/Menu.tscn"
-boot_splash/image="res://src/resources/icons/app_icon_small.png"
+boot_splash/image="res://src/resources/splash/splash.png"
 boot_splash/fullsize=false
-boot_splash/bg_color=Color( 0.957031, 0.365284, 0.218902, 0.910863 )
+boot_splash/bg_color=Color( 0, 0.0627451, 0.0745098, 1 )
 config/icon="res://src/resources/icons/app_icon.png"
 
 [autoload]

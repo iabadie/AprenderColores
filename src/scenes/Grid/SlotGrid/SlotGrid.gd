@@ -2,6 +2,8 @@ extends Container
 
 export (StreamTexture) var image = null;
 
+const fullLife = Color(1,1,1,1)
+
 const firstHit = Color(1,1,1, 0.6)
 
 const secondHit = Color(1,1,1, 0.3)
@@ -21,20 +23,21 @@ func decrease_life():
 		get_tree().call_group("end_game", "end_game")
 	pass
 	
+func increase_life():
+	if squareLife < 3:
+		squareLife += 1
+		change_block_state()
+	pass
+
 func change_block_state():
 	match squareLife:
 		3:
-			print("curar")
+			$Center/Color.modulate = fullLife
 		2:
-			print("primer golpe")
 			$Center/Color.modulate = firstHit
-			#$box.modulate = firstHit
 		1:
-			print("segundo golpe")
 			$Center/Color.modulate = secondHit
-			#$box.modulate = secondHit
 		0:
-			print("tercer golpe")
 			$Center/Color.modulate = lastHit
 			$box.modulate = lastHit
 		-1:
