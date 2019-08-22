@@ -16,6 +16,8 @@ func lose_level():
 func add_points(newPoints = 10):
 	points += newPoints;
 	$Points.text = String(points);
+	if points % 100 == 0:
+		get_tree().call_group("generador", "up_speed")
 
 func end_game():
 	lose_level()
