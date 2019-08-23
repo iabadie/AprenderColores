@@ -21,6 +21,8 @@ boot_splash/image="res://src/resources/splash/splash.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0, 0.0627451, 0.0745098, 1 )
 config/icon="res://src/resources/icons/app_icon.png"
+config/auto_accept_quit=false
+config/quit_on_go_back=false
 
 [autoload]
 

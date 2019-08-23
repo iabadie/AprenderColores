@@ -25,11 +25,13 @@ var primaryColors = [red, blue, yellow];
 
 var navigationStack = [menuScene]
 
+var global_score = 0
+
 func _ready():
 	get_tree().set_auto_accept_quit(false);
 	
 func _notification(what):
-	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST or what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
 		if global.navigationStack.size() > 1:
 			# Go back to last view
 			navigationStack.pop_back()
