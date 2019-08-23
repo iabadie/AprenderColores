@@ -1,5 +1,8 @@
 extends Control
 
+func _ready():
+	$Audio.play()
+
 func _on_Start_pressed():
 	get_tree().change_scene(global.LevelOneScene);
 	global.navigationStack.push_back(global.LevelOneScene);

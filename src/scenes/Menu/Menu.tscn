@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/scenes/Menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://src/resources/fonts/game_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://src/scenes/Menu/MenuButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/resources/background/background.png" type="Texture" id=4]
+[ext_resource path="res://src/resources/audio/main.ogg" type="AudioStream" id=5]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -81,6 +82,10 @@ texture = ExtResource( 4 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 720, 1280 )
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -6.0
 
 [connection signal="pressed" from="MenuContainer/ButtonsContainer/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="MenuContainer/ButtonsContainer/Exit" to="." method="_on_Exit_pressed"]
