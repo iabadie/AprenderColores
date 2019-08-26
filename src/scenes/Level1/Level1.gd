@@ -2,10 +2,21 @@ extends Node2D
 
 const finish_dialog = preload("res://src/scenes/UI/FinishDialog/FinishDialog.tscn")
 
+const helper = preload("res://src/scenes/ColorsHelper/ColorsHelper.tscn")
+
 var points = 0;
 
 func _ready():
 	$Points.text = String(points);
+	var helper_scene = helper.instance()
+	add_child(helper_scene)
+	helper_scene.set_colors_helper(
+		[
+			[global.blue, global.yellow, global.green],
+			[global.yellow, global.red, global.orange],
+			[global.red, global.blue, global.purple]
+		]
+	)
 
 func lose_level():
 	var dialog = finish_dialog.instance()
