@@ -76,3 +76,6 @@ func _on_Tween_tween_completed(object, key):
 	if key == ":modulate":
 		queue_free();
 	pass 
+
+func end_game():
+	$Tween.stop_all()

@@ -15,3 +15,6 @@ func _on_Timer_timeout():
 func up_speed():
 	if generateTime > 0.5:
 		generateTime -= 0.3
+
+func end_game():
+	$Timer.stop()

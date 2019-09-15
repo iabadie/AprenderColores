@@ -5,7 +5,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 87.6561, 10 )
 
-[node name="ColorsGrid" type="Node2D"]
+[node name="ColorsGrid" type="Node2D" groups=[
+"end_game",
+]]
 z_index = 1
 script = ExtResource( 1 )
 

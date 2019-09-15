@@ -4,6 +4,7 @@
 
 [node name="GridGenerator" type="Node2D" groups=[
 "generador",
+"end_game",
 ]]
 script = ExtResource( 1 )
 

@@ -3,7 +3,7 @@
 [ext_resource path="res://src/scenes/Menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://src/resources/fonts/game_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://src/scenes/Menu/MenuButton.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/resources/background/background.png" type="Texture" id=4]
+[ext_resource path="res://src/resources/background/backgroundMenu.png" type="Texture" id=4]
 [ext_resource path="res://src/resources/audio/main.ogg" type="AudioStream" id=5]
 
 [node name="Menu" type="Control"]
